@@ -19,9 +19,9 @@ def load_model():
     model_path = 'models/best.pt'
     
     if os.path.exists(model_path):
-        print(f"📦 Loading trained model from: {model_path}")
-        model = YOLO(model_path)
-        print("✅ Model loaded successfully!")
+        print(f"📦 Loading trained model from: {model_path} on {device}")
+        model = YOLO(model_path).to(device)
+        print(f"✅ Model loaded successfully on {device}!")
     else:
         print("⚠️  Trained model not found. Using pre-trained YOLOv8n for testing.")
         model = YOLO('yolov8n.pt')

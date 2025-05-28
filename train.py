@@ -20,8 +20,8 @@ dataset_config = {
 with open('dataset.yaml', 'w') as f:
     yaml.dump(dataset_config, f)
 
-# Load YOLOv8 model
-model = YOLO('yolo11m.pt')
+# Load YOLOv11 model
+model = YOLO('yolov11n.pt')
 
 # Train the model
 results = model.train(
